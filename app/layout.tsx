@@ -52,6 +52,9 @@ export const metadata: Metadata = {
         description: SITE_DESCRIPTION,
         images: ['/profile-pic.png'],
     },
+    verification: {
+        google: 'h6onKUK-NgKy5AsDcXo1UDTLjGziTfhXrEU4EJ5IoTs',
+    },
 };
 
 export default function RootLayout({
