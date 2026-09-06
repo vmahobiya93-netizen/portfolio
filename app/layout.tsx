@@ -13,6 +13,7 @@ import Preloader from '../components/Preloader';
 import StickyEmail from './_components/StickyEmail';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Script from 'next/script';
+import { GENERAL_INFO, SOCIAL_LINKS } from '@/lib/data';
 
 const antonFont = Anton({
     weight: '400',
@@ -28,9 +29,29 @@ const robotoFlex = Roboto_Flex({
     variable: '--font-roboto-flex',
 });
 
+const SITE_URL = 'https://vaibhav-fullstack.vercel.app';
+const SITE_TITLE = 'Vaibhav Mahobiya - Full Stack Developer';
+const SITE_DESCRIPTION =
+    'Vaibhav Mahobiya is a Full Stack Developer specializing in Magento 2, PHP, Laravel, and React.js. Explore his portfolio, projects, and experience.';
+
 export const metadata: Metadata = {
-    title: 'Portfolio - vaibhav Mahobiya',
-    description: 'Personal portfolio of vaibhav Mahobiya',
+    metadataBase: new URL(SITE_URL),
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    openGraph: {
+        title: SITE_TITLE,
+        description: SITE_DESCRIPTION,
+        url: SITE_URL,
+        siteName: SITE_TITLE,
+        images: ['/profile-pic.png'],
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary',
+        title: SITE_TITLE,
+        description: SITE_DESCRIPTION,
+        images: ['/profile-pic.png'],
+    },
 };
 
 export default function RootLayout({
@@ -46,6 +67,18 @@ export default function RootLayout({
                 strategy="afterInteractive"
                 src="https://t.contentsquare.net/uxa/a588bad1889e4.js"
             />
+            <Script id="person-schema" type="application/ld+json">
+                {JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@type': 'Person',
+                    name: 'Vaibhav Mahobiya',
+                    url: SITE_URL,
+                    image: `${SITE_URL}/profile-pic.png`,
+                    jobTitle: 'Full Stack Developer',
+                    email: GENERAL_INFO.email,
+                    sameAs: SOCIAL_LINKS.map((link) => link.url),
+                })}
+            </Script>
             <body
                 className={`${antonFont.variable} ${robotoFlex.variable} antialiased`}
             >
