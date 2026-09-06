@@ -54,9 +54,7 @@ const Banner = () => {
                     </p>
                     <Button
                         as="link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href={GENERAL_INFO.upworkProfile}
+                        href={`mailto:${GENERAL_INFO.email}`}
                         variant="primary"
                         className="mt-9 banner-button slide-up-and-fade"
                     >
