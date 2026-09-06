@@ -124,7 +124,7 @@ export const PROJECTS: IProject[] = [
       </ul>
       `,
         techStack: [
-            'Magento 2.4.5P7',
+            'Magento 2',
             'PHP',
             'HTML',
             'CSS',
@@ -172,7 +172,7 @@ export const PROJECTS: IProject[] = [
       </ul>
       `,
         techStack: [
-            'Magento 2.4.5P7',
+            'Magento 2',
             'PHP',
             'HTML',
             'CSS',
@@ -287,7 +287,7 @@ export const PROJECTS: IProject[] = [
       </ul>
       `,
         techStack: [
-            'Magento 2.4.5P7',
+            'Magento 2',
             'PHP',
             'HTML',
             'CSS',
@@ -334,7 +334,7 @@ export const PROJECTS: IProject[] = [
       </ul>
       `,
         techStack: [
-            'Magento 2.4.5P7',
+            'Magento 2',
             'PHP',
             'HTML',
             'CSS',
@@ -381,7 +381,7 @@ export const PROJECTS: IProject[] = [
       </ul>
       `,
         techStack: [
-            'Magento 2.4.5P7',
+            'Magento 2',
             'PHP',
             'HTML',
             'CSS',
@@ -428,7 +428,7 @@ export const PROJECTS: IProject[] = [
       </ul>
       `,
         techStack: [
-            'Magento 2.4.5P7',
+            'Magento 2',
             'PHP',
             'HTML',
             'CSS',
@@ -475,7 +475,7 @@ export const PROJECTS: IProject[] = [
       </ul>
       `,
         techStack: [
-            'Magento 2.4.5P7',
+            'Magento 2',
             'PHP',
             'HTML',
             'CSS',
@@ -546,7 +546,7 @@ export const PROJECTS: IProject[] = [
       </ul>
       `,
         techStack: [
-            'Magento 2.4.5P7',
+            'Magento 2',
             'PHP',
             'HTML',
             'CSS',
