@@ -93,7 +93,7 @@ const AboutMe = () => {
                                 My approach is simple: clean code, solid performance, and solutions built to last.
                             </p>
                             <p className="mt-3 slide-up-and-fade">
-                                Whether it's a custom web application, an eCommerce platform, or a complex backend system, I focus on what matters most — speed, security, and scalability — so you get a product that not only impresses users but drives real business growth.
+                                Whether it&apos;s a custom web application, an eCommerce platform, or a complex backend system, I focus on what matters most — speed, security, and scalability — so you get a product that not only impresses users but drives real business growth.
                             </p>
                         </div>
                     </div>
