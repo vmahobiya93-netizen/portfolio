@@ -8,7 +8,7 @@ interface RepoStats {
 
 const Footer = async () => {
     const repoStats = await fetch(
-        'https://api.github.com/repos/vaibhav/portfolio-2.0',
+        'https://api.github.com/repos/vmahobiya93-netizen/portfolio',
         {
             next: {
                 revalidate: 60 * 60, // 1 hour
@@ -32,7 +32,7 @@ const Footer = async () => {
 
                 <div className="">
                     <a
-                        href="https://github.com/vaibhav/portfolio-2.0"
+                        href="https://github.com/vmahobiya93-netizen/portfolio"
                         target="_blank"
                         className="leading-none text-muted-foreground hover:underline hover:text-white"
                     >
@@ -46,21 +46,6 @@ const Footer = async () => {
                             </span>
                         </div>
                     </a>
-
-                    {/* Note: If you are not vaibhav, use this copyright message instead */}
-                    {/* <a href='https://www.me.toinfinite.dev/' className="leading-none text-muted-foreground hover:underline hover:text-white">
-                        Design & built by Vaibhav Mahobiya <br />
-                        Revised by YOUR NAME
-
-                        <div className="flex items-center justify-center gap-5 pt-1">
-                            <span className='flex items-center gap-2'>
-                                <Star size={14} /> {stargazers_count}
-                            </span>
-                            <span className='flex items-center gap-2'>
-                                <GitFork size={14} /> {forks_count}
-                            </span>
-                        </div>
-                    </a> */}
                 </div>
             </div>
         </footer>
