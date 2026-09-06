@@ -2,7 +2,9 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
+import Image from 'next/image';
 import React from 'react';
+
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -63,18 +65,35 @@ const AboutMe = () => {
                 </p>
 
                 <div className="grid md:grid-cols-12 mt-9">
+                    
                     <div className="md:col-span-5">
                         <p className="text-5xl slide-up-and-fade">
                             Hi, I&apos;m Vaibhav.
                         </p>
+
+                        <div className="mt-8 w-[280px] h-[280px] rounded-full overflow-hidden slide-up-and-fade">
+                            <Image
+                                src="/profile-pic.png"
+                                alt="Vaibhav Mahobiya"
+                                width={280}
+                                height={280}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
                     </div>
                     <div className="md:col-span-7">
-                        <div className="text-lg text-muted-foreground max-w-[450px]">
+                        <div className="text-lg text-muted-foreground max-w-[450px] md:max-w-none">
                             <p className="slide-up-and-fade">
-                                I&apos;m a Full Stack Developer who turns your ideas into scalable, high-performing web solutions that actually deliver results. From robust backend architecture to seamless user experiences, I build products that work flawlessly — and grow with your business.
+                                I&apos;m a Full Stack Developer who turns your ideas into scalable, high-performing web solutions that actually deliver results.
                             </p>
                             <p className="mt-3 slide-up-and-fade">
-                                My approach is simple: clean code, solid performance, and solutions built to last. Whether it's a custom web application, an eCommerce platform, or a complex backend system, I focus on what matters most — speed, security, and scalability — so you get a product that not only impresses users but drives real business growth.
+                                From robust backend architecture to seamless user experiences, I build products that work flawlessly — and grow with your business.
+                            </p>
+                            <p className="mt-3 slide-up-and-fade">
+                                My approach is simple: clean code, solid performance, and solutions built to last.
+                            </p>
+                            <p className="mt-3 slide-up-and-fade">
+                                Whether it's a custom web application, an eCommerce platform, or a complex backend system, I focus on what matters most — speed, security, and scalability — so you get a product that not only impresses users but drives real business growth.
                             </p>
                         </div>
                     </div>
