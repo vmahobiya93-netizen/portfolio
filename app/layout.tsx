@@ -11,7 +11,6 @@ import Navbar from '@/components/Navbar';
 import CustomCursor from '@/components/CustomCursor';
 import Preloader from '../components/Preloader';
 import StickyEmail from './_components/StickyEmail';
-import AIChatbot from './_components/AIChatbot';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Script from 'next/script';
 import { GENERAL_INFO, SOCIAL_LINKS } from '@/lib/data';
@@ -111,7 +110,6 @@ export default function RootLayout({
                     <ScrollProgressIndicator />
                     <ParticleBackground />
                     <StickyEmail />
-                    <AIChatbot />
                 </ReactLenis>
             </body>
         </html>
