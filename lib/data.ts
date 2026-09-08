@@ -120,9 +120,9 @@ export const PROJECTS: IProject[] = [
       </ul>
       `,
         techStack: ['Laravel', 'PHP', 'jQuery', 'GTM', 'HTML', 'CSS'],
-        thumbnail: '/projects/thumbnail/jim-corbett-wedding.jpg',
-        longThumbnail: '/projects/long/jim-corbett-wedding.jpg',
-        images: ['/projects/images/jim-corbett-wedding-1.jpg'],
+        thumbnail: '/projects/thumbnail/jim-corbett-wedding.png',
+        longThumbnail: '/projects/long/jim-corbett-wedding.png',
+        images: ['/projects/images/jim-corbett-wedding-1.png'],
     },
     {
         title: 'Girlion',
@@ -149,9 +149,9 @@ export const PROJECTS: IProject[] = [
       </ul>
       `,
         techStack: ['Laravel', 'PHP', 'jQuery', 'GTM', 'HTML', 'CSS'],
-        thumbnail: '/projects/thumbnail/girlion.jpg',
-        longThumbnail: '/projects/long/girlion.jpg',
-        images: ['/projects/images/girlion-1.jpg'],
+        thumbnail: '/projects/thumbnail/girlion.png',
+        longThumbnail: '/projects/long/girlion.png',
+        images: ['/projects/images/girlion-1.png'],
     },
     {
         title: 'Katespade',
