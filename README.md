@@ -29,6 +29,21 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+### AI portfolio assistant
+
+The site includes a Gemini-powered chat assistant. Create a `.env.local` file
+in the project root and add your own key from Google AI Studio:
+
+```env
+GEMINI_API_KEY=your_gemini_api_key
+# Optional: defaults to gemini-2.0-flash
+GEMINI_MODEL=gemini-2.0-flash
+```
+
+The key is used only by the `/api/chat` server route and must never be added to
+client-side code or committed to Git. If a key has been shared publicly,
+revoke it and create a replacement before using it.
+
 ## 🤝 Contributing
 If you'd like to contribute or suggest improvements, feel free to open an issue or submit a pull request. All contributions are welcome!
 

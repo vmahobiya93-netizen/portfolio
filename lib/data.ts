@@ -26,6 +26,7 @@ export const MY_STACK: Record<string, IStackItem[]> = {
     Backend: [
         { name: 'PHP', icon: '/logo/php-vector-logo-seeklogo/php-seeklogo.svg' },
         { name: 'Laravel', icon: '/logo/laravel-vector-logo-seeklogo/laravel-seeklogo.svg' },
+        { name: 'Node.js', icon: '/logo/node.png' },
         { name: 'CodeIgniter', icon: '/logo/codeigniter-vector-logo-seeklogo/codeigniter-seeklogo.svg' },
         { name: 'OpenCart', icon: '/logo/opencart-vector-logo-seeklogo/opencart-seeklogo.svg' },
     ],
@@ -94,6 +95,64 @@ export const MY_STACK: Record<string, IStackItem[]> = {
 };
 
 export const PROJECTS: IProject[] = [
+    {
+        title: 'Jim Corbett Wedding',
+        slug: 'jim-corbett-wedding',
+        liveUrl: 'https://jimcorbettwedding.in/',
+        description: `
+      A destination wedding planning website for Jim Corbett, built on Laravel to showcase venues, services, and packages for couples planning a wedding in the hills. <br/> <br/>
+
+      Key Features:<br/>
+      <ul>
+        <li>💍 Service Showcase: Wedding band, bridal makeup, mehendi artists, transportation, jungle safari, and wedding chariot offerings</li>
+        <li>🏞️ Venue Gallery: Curated venue and destination photography</li>
+        <li>📝 Request a Quote: Lead-capture form for budget, guest count, and event dates</li>
+        <li>📰 Blog: Wedding planning guides and tips content section</li>
+        <li>📱 Fully Responsive: Optimized across desktop and mobile</li>
+      </ul>
+      `,
+        role: `
+      Full Stack Developer <br/>
+      <ul>
+        <li>Developed and maintained an informational website using Laravel, ensuring reliable performance, timely content updates, and a smooth user experience.</li>
+        <li>Built the venue gallery and service showcase sections with interactive UI using jQuery.</li>
+        <li>Integrated Google Tag Manager for tracking and analytics.</li>
+      </ul>
+      `,
+        techStack: ['Laravel', 'PHP', 'jQuery', 'GTM', 'HTML', 'CSS'],
+        thumbnail: '/projects/thumbnail/jim-corbett-wedding.jpg',
+        longThumbnail: '/projects/long/jim-corbett-wedding.jpg',
+        images: ['/projects/images/jim-corbett-wedding-1.jpg'],
+    },
+    {
+        title: 'Girlion',
+        slug: 'girlion',
+        description: `
+      A travel and booking platform for Gir National Park, built on Laravel to support safari, hotel, and tour package reservations. <br/> <br/>
+
+      Key Features:<br/>
+      <ul>
+        <li>🦁 Safari Booking: Date and guest-based availability checking and booking widget</li>
+        <li>🏨 Accommodation Listings: Hotel and resort packages with pricing</li>
+        <li>📍 Nearby Attractions: Curated guide to nearby dams, museums, temples, and zoos</li>
+        <li>⭐ Reviews: Customer testimonials and ratings section</li>
+        <li>📰 Blog: Safari and travel guide content section</li>
+        <li>📱 Fully Responsive: Optimized across desktop and mobile</li>
+      </ul>
+      `,
+        role: `
+      Full Stack Developer <br/>
+      <ul>
+        <li>Built and maintained a Laravel-based travel and booking platform supporting safari, hotel, and tour package reservations.</li>
+        <li>Developed backend logic for listings, bookings, and data management.</li>
+        <li>Integrated Google Tag Manager for tracking and analytics.</li>
+      </ul>
+      `,
+        techStack: ['Laravel', 'PHP', 'jQuery', 'GTM', 'HTML', 'CSS'],
+        thumbnail: '/projects/thumbnail/girlion.jpg',
+        longThumbnail: '/projects/long/girlion.jpg',
+        images: ['/projects/images/girlion-1.jpg'],
+    },
     {
         title: 'Katespade',
         slug: 'katespade',
@@ -568,7 +627,7 @@ export const PROJECTS: IProject[] = [
         title: 'Systemq',
         slug: 'systemq',
         liveUrl: 'https://systemq.com/',
-        description: `
+           description: `
       An e-commerce storefront built on BigCommerce for Systemq, covering the product catalog, category pages, and checkout. <br/> <br/>
 
       Key Features:<br/>
