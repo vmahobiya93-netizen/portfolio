@@ -158,7 +158,7 @@ export const PROJECTS: IProject[] = [
         slug: 'katespade',
         liveUrl: 'https://katespade.co.id',
         description: `
-      An e-commerce storefront built on Magento 2 for Kate Spade Indonesia, covering the full shopping experience — homepage campaigns, product catalog, and checkout. <br/> <br/>
+      An e-commerce storefront built on Magento 2 for Kate Spade Indonesia, covering the full shopping experience: homepage campaigns, product catalog, and checkout. <br/> <br/>
 
       Key Features:<br/>
       <ul>
@@ -279,7 +279,7 @@ export const PROJECTS: IProject[] = [
         title: 'HRM System',
         slug: 'hrm-system',
         description: `
-      Human Resource Management System — a complete HRM platform built with Laravel and React.js to manage employee data, attendance, and internal workflows. <br/> <br/>
+      Human Resource Management System: a complete HRM platform built with Laravel and React.js to manage employee data, attendance, and internal workflows. <br/> <br/>
 
       Key Features:<br/>
       <ul>
