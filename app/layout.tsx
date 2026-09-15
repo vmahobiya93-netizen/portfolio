@@ -13,6 +13,7 @@ import Preloader from '../components/Preloader';
 import StickyEmail from './_components/StickyEmail';
 import AIChatbot from './_components/AIChatbot';
 import WhatsAppBadge from './_components/WhatsAppBadge';
+import VisitTracker from './_components/VisitTracker';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Script from 'next/script';
 import { GENERAL_INFO, SOCIAL_LINKS } from '@/lib/data';
@@ -114,6 +115,7 @@ export default function RootLayout({
                     <StickyEmail />
                     <AIChatbot />
                     <WhatsAppBadge />
+                    <VisitTracker />
                 </ReactLenis>
             </body>
         </html>
