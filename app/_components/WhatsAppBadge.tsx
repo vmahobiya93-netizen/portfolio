@@ -1,13 +1,19 @@
 'use client';
 
+import { useChatbot } from './ChatbotContext';
+
 const WHATSAPP_NUMBER = '919074215693';
 const WHATSAPP_MESSAGE =
     "Hi Vaibhav, I saw your portfolio and I'd like to discuss a project with you.";
 
 const WhatsAppBadge = () => {
+    const { isOpen } = useChatbot();
+
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
         WHATSAPP_MESSAGE
     )}`;
+
+    if (isOpen) return null;
 
     return (
         <div className="fixed bottom-24 right-5 z-[5] sm:bottom-28 sm:right-8">

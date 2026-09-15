@@ -4,6 +4,7 @@ import { FormEvent, useEffect, useRef, useState } from 'react';
 import { LoaderCircle, MessageCircle, Send, X } from 'lucide-react';
 import { marked } from 'marked';
 import parse from 'html-react-parser';
+import { useChatbot } from './ChatbotContext';
 
 type Message = {
     role: 'user' | 'model';
@@ -16,7 +17,7 @@ const initialMessage: Message = {
 };
 
 export default function AIChatbot() {
-    const [isOpen, setIsOpen] = useState(false);
+    const { isOpen, setIsOpen } = useChatbot();
     const [input, setInput] = useState('');
     const [messages, setMessages] = useState<Message[]>([initialMessage]);
     const [isLoading, setIsLoading] = useState(false);
@@ -150,7 +151,7 @@ export default function AIChatbot() {
             <button
                 type="button"
                 aria-label={isOpen ? 'Close portfolio assistant' : 'Open portfolio assistant'}
-                onClick={() => setIsOpen((current) => !current)}
+                onClick={() => setIsOpen(!isOpen)}
                 className="ml-auto flex size-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/20 transition hover:scale-105"
             >
                 {isOpen ? <X size={22} /> : <MessageCircle size={22} />}
