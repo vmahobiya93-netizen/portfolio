@@ -7,6 +7,7 @@ interface IStackItem {
 
 export const GENERAL_INFO = {
     email: 'Vmahobiya93@gmail.com',
+    phone: '+91 90742 15693',
 
     emailSubject: "Let's collaborate on a project",
     emailBody: 'Hi, I am reaching out to you because...',
