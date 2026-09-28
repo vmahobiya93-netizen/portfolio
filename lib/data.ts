@@ -18,7 +18,7 @@ export const SOCIAL_LINKS = [
     { name: 'github', url: 'https://github.com/vmahobiya93-netizen' },
     {
         name: 'linkedin',
-        url: 'https://www.linkedin.com/in/vaibhav-mahobiya-051b8b136/',
+        url: 'https://www.linkedin.com/in/vaibhav-mahobiya-32a5b63a9',
     },
 ];
 

@@ -73,7 +73,7 @@ const AboutMe = () => {
 
                         <div className="mt-8 w-[280px] h-[280px] rounded-full overflow-hidden slide-up-and-fade">
                             <Image
-                                src="/profile-pic.png"
+                                src="/profile-pic.jpg"
                                 alt="Vaibhav Mahobiya"
                                 width={280}
                                 height={280}
