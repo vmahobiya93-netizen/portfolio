@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils';
 import { useState } from 'react';
 import { MoveUpRight } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { GENERAL_INFO, SOCIAL_LINKS } from '@/lib/data';
 
 const COLORS = [
@@ -44,24 +45,24 @@ const Navbar = () => {
                     aria-label="Quick navigation"
                     className="absolute left-0 right-24 top-0 hidden items-center gap-6 border-b bg-background/95 px-8 py-7 text-sm md:flex"
                 >
-                    <a href="/" className="mr-auto font-semibold text-primary">
+                    <Link href="/" className="mr-auto font-semibold text-primary">
                         VM.
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                         href="/#selected-projects"
                         className="hover:text-primary"
                     >
                         Work
-                    </a>
-                    <a href="/#services" className="hover:text-primary">
+                    </Link>
+                    <Link href="/#services" className="hover:text-primary">
                         Services
-                    </a>
-                    <a href="/#my-experience" className="hover:text-primary">
+                    </Link>
+                    <Link href="/#my-experience" className="hover:text-primary">
                         Experience
-                    </a>
-                    <a href="/#contact" className="text-primary">
+                    </Link>
+                    <Link href="/#contact" className="text-primary">
                         Let’s talk ↗
-                    </a>
+                    </Link>
                 </nav>
                 <button
                     aria-label={

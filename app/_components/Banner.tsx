@@ -2,7 +2,7 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
-import React, { useRef } from 'react';
+import React from 'react';
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 import ArrowAnimation from '@/components/ArrowAnimation';
 import ExperienceDuration from '@/components/ExperienceDuration';
