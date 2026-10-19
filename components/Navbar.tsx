@@ -29,6 +29,8 @@ const MENU_LINKS = [
         name: 'Projects',
         url: '/#selected-projects',
     },
+    { name: 'Services', url: '/#services' },
+    { name: 'Contact', url: '/#contact' },
 ];
 
 const Navbar = () => {
@@ -38,7 +40,34 @@ const Navbar = () => {
     return (
         <>
             <div className="sticky top-0 z-[4]">
+                <nav
+                    aria-label="Quick navigation"
+                    className="absolute left-0 right-24 top-0 hidden items-center gap-6 border-b bg-background/95 px-8 py-7 text-sm md:flex"
+                >
+                    <a href="/" className="mr-auto font-semibold text-primary">
+                        VM.
+                    </a>
+                    <a
+                        href="/#selected-projects"
+                        className="hover:text-primary"
+                    >
+                        Work
+                    </a>
+                    <a href="/#services" className="hover:text-primary">
+                        Services
+                    </a>
+                    <a href="/#my-experience" className="hover:text-primary">
+                        Experience
+                    </a>
+                    <a href="/#contact" className="text-primary">
+                        Let’s talk ↗
+                    </a>
+                </nav>
                 <button
+                    aria-label={
+                        isMenuOpen ? 'Close navigation' : 'Open navigation'
+                    }
+                    aria-expanded={isMenuOpen}
                     className={cn(
                         'group size-12 absolute top-5 right-5 md:right-10 z-[2]',
                     )}
@@ -129,7 +158,7 @@ const Navbar = () => {
                                             <span
                                                 className={cn(
                                                     'size-3.5 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-[200%] transition-all',
-                                                    COLORS[idx],
+                                                    COLORS[idx % COLORS.length],
                                                 )}
                                             >
                                                 <MoveUpRight

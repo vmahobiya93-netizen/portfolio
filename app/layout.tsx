@@ -1,15 +1,15 @@
 import type { Metadata } from 'next';
 import { Anton, Roboto_Flex } from 'next/font/google';
-import { ReactLenis } from 'lenis/react';
 
 import 'lenis/dist/lenis.css';
 import './globals.css';
 import Footer from '@/components/Footer';
 import ScrollProgressIndicator from '@/components/ScrollProgressIndicator';
-import ParticleBackground from '@/components/ParticleBackground';
 import Navbar from '@/components/Navbar';
+import { ReactLenis } from 'lenis/react';
 import CustomCursor from '@/components/CustomCursor';
-import Preloader from '../components/Preloader';
+import Preloader from '@/components/Preloader';
+import ParticleBackground from '@/components/ParticleBackground';
 import StickyEmail from './_components/StickyEmail';
 import AIChatbot from './_components/AIChatbot';
 import WhatsAppBadge from './_components/WhatsAppBadge';
@@ -36,7 +36,7 @@ const robotoFlex = Roboto_Flex({
 const SITE_URL = 'https://vaibhav-fullstack.vercel.app';
 const SITE_TITLE = 'Vaibhav Mahobiya - Full Stack Developer';
 const SITE_DESCRIPTION =
-    'Vaibhav Mahobiya is a Full Stack Developer specializing in Magento 2, PHP, Laravel, and React.js. Explore his portfolio, projects, and experience.';
+    'Full stack development by Vaibhav Mahobiya. Explore custom web applications, eCommerce platforms, and API integrations. Available for freelance projects and remote full-time roles.';
 
 export const metadata: Metadata = {
     metadataBase: new URL(SITE_URL),
@@ -89,13 +89,7 @@ export default function RootLayout({
             <body
                 className={`${antonFont.variable} ${robotoFlex.variable} antialiased`}
             >
-                <ReactLenis
-                    root
-                    options={{
-                        lerp: 0.1,
-                        duration: 1.4,
-                    }}
-                >
+                <ReactLenis root options={{ lerp: 0.1, duration: 1.4 }}>
                     {/* <a
                         href="https://forms.gle/t73XYJgWD5cJNr6e8"
                         target="_blank"
@@ -109,9 +103,9 @@ export default function RootLayout({
                     <main>{children}</main>
                     <Footer />
 
+                    <ScrollProgressIndicator />
                     <CustomCursor />
                     <Preloader />
-                    <ScrollProgressIndicator />
                     <ParticleBackground />
                     <StickyEmail />
                     <ChatbotProvider>

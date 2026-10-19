@@ -1,6 +1,6 @@
 'use client';
 import SectionTitle from '@/components/SectionTitle';
-import { PROJECTS } from '@/lib/data';
+import { PROJECTS as ALL_PROJECTS } from '@/lib/data';
 import { cn } from '@/lib/utils';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -8,6 +8,17 @@ import { ScrollTrigger } from 'gsap/all';
 import Image from 'next/image';
 import React, { useRef, useState, MouseEvent } from 'react';
 import Project from './Project';
+import Link from 'next/link';
+import LiveProjectLink from '@/components/LiveProjectLink';
+const featuredSlugs = [
+    'coach',
+    'girlion',
+    'nespresso',
+    'jim-corbett-wedding',
+];
+const PROJECTS = featuredSlugs.map(
+    (slug) => ALL_PROJECTS.find((project) => project.slug === slug)!,
+);
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -106,7 +117,7 @@ const ProjectList = () => {
     return (
         <section className="pb-section" id="selected-projects">
             <div className="container">
-                <SectionTitle title="SELECTED PROJECTS" />
+                <SectionTitle title="Featured Projects" />
 
                 <div className="group/projects relative" ref={containerRef}>
                     {selectedProject !== null && (
@@ -150,6 +161,60 @@ const ProjectList = () => {
                         ))}
                     </div>
                 </div>
+                <details className="mt-10 rounded-xl border p-6">
+                    <summary>Explore more projects</summary>
+                    <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3">
+                        {ALL_PROJECTS.filter(
+                            (p) => !featuredSlugs.includes(p.slug),
+                        ).map((p) => (
+                            <article
+                                key={p.slug}
+                                className="group/more rounded-xl border border-transparent p-4 transition-colors hover:border-primary/40 hover:bg-background-light focus-within:border-primary/40"
+                            >
+                                <Link
+                                    href={'/projects/' + p.slug}
+                                    className="block"
+                                >
+                                    <div className="mb-4 overflow-hidden rounded-lg">
+                                        <Image
+                                            src={p.thumbnail}
+                                            alt={`${p.title} preview`}
+                                            width={450}
+                                            height={280}
+                                            sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                                            className="aspect-[8/5] w-full object-cover object-top transition-transform duration-500 group-hover/more:scale-105"
+                                        />
+                                    </div>
+                                    <h3 className="text-2xl font-anton transition-colors group-hover/more:text-primary">
+                                        {p.title}
+                                    </h3>
+                                    <ul
+                                        aria-label="Tech stack"
+                                        className="mt-3 flex flex-wrap gap-2 text-xs text-muted-foreground"
+                                    >
+                                        {p.techStack.map((tech) => (
+                                            <li
+                                                key={tech}
+                                                className="rounded-full border px-2 py-1"
+                                            >
+                                                {tech}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <span className="mt-4 inline-block text-sm underline underline-offset-4">
+                                        View project details ↗
+                                    </span>
+                                </Link>
+                                <div className="mt-3">
+                                    <LiveProjectLink
+                                        url={p.liveUrl}
+                                        title={p.title}
+                                    />
+                                </div>
+                            </article>
+                        ))}
+                    </div>
+                </details>
             </div>
         </section>
     );

@@ -8,6 +8,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
 import { useRef } from 'react';
+import LiveProjectLink from '@/components/LiveProjectLink';
 
 interface Props {
     project: IProject;
@@ -85,7 +86,7 @@ const ProjectDetails = ({ project }: Props) => {
     );
 
     return (
-        <section className="pt-5 pb-14">
+        <section className="pt-24 pb-14">
             <div className="container" ref={containerRef}>
                 <TransitionLink
                     back
@@ -101,34 +102,29 @@ const ProjectDetails = ({ project }: Props) => {
                     id="info"
                 >
                     <div className="relative w-full">
-                        <div className="flex items-start gap-6 mx-auto mb-10 max-w-[635px]">
+                        <div className="flex flex-wrap items-start gap-6 mx-auto mb-10 max-w-[635px]">
                             <h1 className="fade-in-later opacity-0 text-4xl md:text-[60px] leading-none font-anton overflow-hidden">
                                 <span className="inline-block">
                                     {project.title}
                                 </span>
                             </h1>
 
-                            <div className="fade-in-later opacity-0 flex gap-2">
+                            <div className="fade-in-later opacity-0 flex flex-wrap items-center gap-3">
                                 {project.sourceCode && (
                                     <a
                                         href={project.sourceCode}
                                         target="_blank"
                                         rel="noreferrer noopener"
-                                        className="hover:text-primary"
+                                        className="inline-flex min-h-11 items-center gap-2 text-sm hover:text-primary"
                                     >
-                                        <Github size={30} />
+                                        <Github size={20} aria-hidden="true" />{' '}
+                                        View source code
                                     </a>
                                 )}
-                                {project.liveUrl && (
-                                    <a
-                                        href={project.liveUrl}
-                                        target="_blank"
-                                        rel="noreferrer noopener"
-                                        className="hover:text-primary"
-                                    >
-                                        <ExternalLink size={30} />
-                                    </a>
-                                )}
+                                <LiveProjectLink
+                                    url={project.liveUrl}
+                                    title={project.title}
+                                />
                             </div>
                         </div>
 

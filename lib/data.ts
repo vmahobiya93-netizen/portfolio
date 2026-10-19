@@ -128,6 +128,7 @@ export const PROJECTS: IProject[] = [
     {
         title: 'Girlion',
         slug: 'girlion',
+        liveUrl: 'https://www.girlion.in/',
         description: `
       A travel and booking platform for Gir National Park, built on Laravel to support safari, hotel, and tour package reservations. <br/> <br/>
 

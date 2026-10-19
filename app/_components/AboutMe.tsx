@@ -2,13 +2,11 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
-import Image from 'next/image';
-import React from 'react';
-
-
+import React, { useRef } from 'react';
 gsap.registerPlugin(ScrollTrigger, useGSAP);
+import ExperienceDuration from '@/components/ExperienceDuration';
 
-const AboutMe = () => {
+export default function AboutMe() {
     const container = React.useRef<HTMLDivElement>(null);
 
     useGSAP(
@@ -54,53 +52,37 @@ const AboutMe = () => {
     );
 
     return (
-        <section className="pb-section" id="about-me">
-            <div className="container" ref={container}>
-                <h2 className="text-4xl md:text-6xl font-thin mb-20 slide-up-and-fade">
-                  I believe in a solution-driven development approach, ensuring that every project I work on is built to be scalable, maintainable, and tailored to real business needs.
-                </h2>
-
-                <p className="pb-3 border-b text-muted-foreground slide-up-and-fade">
-                    This is me.
+        <section
+            ref={container}
+            id="about-me"
+            className="container grid py-20 md:grid-cols-[1fr_1.5fr]"
+        >
+            <div>
+                <p className="slide-up-and-fade text-sm uppercase tracking-[0.2em] text-primary">
+                    About me
                 </p>
-
-                <div className="grid md:grid-cols-12 mt-9">
-                    
-                    <div className="md:col-span-5">
-                        <p className="text-5xl slide-up-and-fade">
-                            Hi, I&apos;m Vaibhav.
-                        </p>
-
-                        <div className="mt-8 w-[280px] h-[280px] rounded-full overflow-hidden slide-up-and-fade">
-                            <Image
-                                src="/profile-pic.jpg"
-                                alt="Vaibhav Mahobiya"
-                                width={280}
-                                height={280}
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
-                    </div>
-                    <div className="md:col-span-7">
-                        <div className="text-lg text-muted-foreground max-w-[450px] md:max-w-none">
-                            <p className="slide-up-and-fade">
-                                I&apos;m a Full Stack Developer who turns your ideas into scalable, high-performing web solutions that actually deliver results.
-                            </p>
-                            <p className="mt-3 slide-up-and-fade">
-                                From robust backend architecture to seamless user experiences, I build products that work flawlessly and grow with your business.
-                            </p>
-                            <p className="mt-3 slide-up-and-fade">
-                                My approach is simple: clean code, solid performance, and solutions built to last.
-                            </p>
-                            <p className="mt-3 slide-up-and-fade">
-                                Whether it&apos;s a custom web application, an eCommerce platform, or a complex backend system, I focus on what matters most: speed, security, and scalability, so you get a product that not only impresses users but drives real business growth.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <h2 className="slide-up-and-fade mt-4 font-anton text-4xl">
+                    HI, I&apos;M VAIBHAV.
+                </h2>
+            </div>
+            <div className="space-y-4 text-lg leading-relaxed text-muted-foreground">
+                <p className="slide-up-and-fade">
+                    I’m a full stack developer with <ExperienceDuration /> of
+                    experience working on eCommerce stores and business
+                    applications.
+                </p>
+                <p className="slide-up-and-fade">
+                    My work spans backend development with PHP and Laravel,
+                    React interfaces, eCommerce platforms, and API integrations.
+                    I enjoy turning business requirements into features that
+                    people can use every day.
+                </p>
+                <p className="slide-up-and-fade">
+                    I’m open to freelance projects and remote full-time
+                    opportunities where I can contribute across the backend and
+                    frontend.
+                </p>
             </div>
         </section>
     );
-};
-
-export default AboutMe;
+}
