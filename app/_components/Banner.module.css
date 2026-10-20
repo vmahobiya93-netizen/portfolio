@@ -1,0 +1,240 @@
+.hero {
+    --hero-accent: hsl(var(--primary));
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: #0b111b;
+}
+
+.backdrop {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: #101923;
+    clip-path: polygon(76% 0, 100% 0, 100% 100%, 52% 100%);
+}
+
+.backdrop::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #0e1620;
+    clip-path: polygon(100% 19%, 100% 100%, 67% 100%);
+}
+
+.arrowBackdrop {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.layout {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 48px;
+    padding-top: 142px;
+    padding-bottom: 70px;
+    min-height: 720px;
+}
+
+.copy {
+    min-width: 0;
+}
+
+.heading {
+    color: #f4f6fa;
+    font-size: clamp(32px, 3.65vw, 48px);
+    font-weight: 800;
+    line-height: 1.18;
+    letter-spacing: -0.035em;
+}
+
+.heading > span {
+    display: block;
+}
+.headingBreak {
+    display: none;
+}
+.accent {
+    color: var(--hero-accent);
+}
+
+.description {
+    max-width: 470px;
+    margin-top: 24px;
+    color: #aeb4be;
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+.experience {
+    color: #e6e9ee;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 26px;
+    margin-top: 32px;
+}
+
+.primaryAction {
+    display: inline-flex;
+    min-height: 52px;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 14px 24px;
+    background: var(--hero-accent);
+    color: #0b111b;
+    font-size: 14px;
+    font-weight: 700;
+    transition: background-color 180ms ease;
+}
+
+.primaryAction:hover {
+    background: hsl(var(--primary) / 0.85);
+}
+
+.workAction {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    gap: 12px;
+    color: #f4f6fa;
+    font-size: 14px;
+}
+
+.actionIcon {
+    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--hero-accent);
+    color: #0b111b;
+    transition: transform 180ms ease;
+}
+
+.workAction:hover .actionIcon {
+    transform: translate(2px, -2px);
+}
+
+.availability {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 28px;
+    color: #aeb4be;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.statusDot {
+    width: 6px;
+    height: 6px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--hero-accent);
+}
+
+.recruiterLink {
+    display: inline-flex;
+    min-height: 40px;
+    align-items: center;
+    gap: 6px;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #cbd1da;
+}
+
+.recruiterLink:hover {
+    color: var(--hero-accent);
+}
+
+.portrait {
+    width: 100%;
+    max-width: 440px;
+    justify-self: end;
+    color: var(--hero-accent);
+}
+
+.portraitSvg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width: 901px) and (max-width: 1150px) {
+    .layout {
+        gap: 28px;
+    }
+    .headingBreak {
+        display: block;
+    }
+}
+
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 36px;
+        min-height: 0;
+        padding-top: 112px;
+        padding-bottom: 48px;
+    }
+    .copy {
+        width: 100%;
+        max-width: 590px;
+        margin-inline: auto;
+    }
+    .heading {
+        font-size: clamp(30px, 5.7vw, 44px);
+    }
+    .portrait {
+        max-width: 330px;
+        justify-self: center;
+    }
+    .backdrop {
+        clip-path: polygon(100% 24%, 100% 100%, 10% 100%);
+    }
+}
+
+@media (max-width: 480px) {
+    .heading {
+        font-size: clamp(28px, 7.5vw, 36px);
+    }
+    .headingBreak {
+        display: block;
+    }
+    .description {
+        margin-top: 18px;
+        font-size: 14px;
+        line-height: 1.75;
+    }
+    .actions {
+        gap: 18px;
+        margin-top: 24px;
+    }
+    .primaryAction {
+        padding-inline: 18px;
+        font-size: 13px;
+    }
+    .workAction {
+        gap: 8px;
+        font-size: 13px;
+    }
+    .actionIcon {
+        width: 32px;
+        height: 32px;
+    }
+    .portrait {
+        max-width: 280px;
+    }
+}

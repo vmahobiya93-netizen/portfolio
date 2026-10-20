@@ -58,51 +58,40 @@ const Skills = () => {
     );
 
     return (
-        <section id="my-stack" ref={containerRef}>
+        <section id="my-stack" ref={containerRef} className="pb-16 md:pb-20">
             <div className="container">
-                <SectionTitle title="My Stack" />
+                <SectionTitle title="My Stack" className="mb-6" />
 
-                <div className="space-y-20">
+                <div className="grid !gap-4 md:grid-cols-2">
                     {Object.entries(MY_STACK).map(([key, value]) => (
-                        <div className="grid sm:grid-cols-12" key={key}>
-                            <div className="sm:col-span-5">
-                                <p className="slide-up text-5xl font-anton leading-none text-muted-foreground uppercase">
-                                    {key}
-                                </p>
-                            </div>
-
-                            <div className="sm:col-span-7 flex gap-x-11 gap-y-9 flex-wrap">
-                                {value.map((item) =>
-                                    item.icon ? (
-                                        <div
-                                            className="slide-up flex gap-3.5 items-center leading-none"
-                                            key={item.name}
-                                        >
-                                            <div>
-                                                <Image
-                                                    src={item.icon}
-                                                    alt={item.name}
-                                                    width={40}
-                                                    height={40}
-                                                    className="max-h-10 w-auto"
-                                                />
-                                            </div>
-                                            <span className="text-2xl capitalize">
-                                                {item.name}
-                                            </span>
-                                        </div>
-                                    ) : (
-                                        <div
-                                            className="slide-up flex items-center leading-none"
-                                            key={item.name}
-                                        >
-                                            <span className="text-2xl capitalize text-muted-foreground">
-                                                {item.name}
-                                            </span>
-                                        </div>
-                                    ),
-                                )}
-                            </div>
+                        <div
+                            className="slide-up min-w-0 rounded-xl border bg-background-light/20 p-4 sm:p-5"
+                            key={key}
+                        >
+                            <h3 className="mb-3 font-anton text-xl leading-tight uppercase text-primary">
+                                {key}
+                            </h3>
+                            <ul className="flex flex-wrap gap-2">
+                                {value.map((item) => (
+                                    <li
+                                        className="flex min-w-0 max-w-full items-center gap-2 rounded-lg border border-white/10 bg-background/60 px-2.5 py-2 text-sm leading-snug"
+                                        key={item.name}
+                                    >
+                                        {item.icon && (
+                                            <Image
+                                                src={item.icon}
+                                                alt=""
+                                                width={20}
+                                                height={20}
+                                                className="size-5 shrink-0 object-contain"
+                                            />
+                                        )}
+                                        <span className="min-w-0 break-words">
+                                            {item.name}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
                     ))}
                 </div>
