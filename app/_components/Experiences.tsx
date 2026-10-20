@@ -5,12 +5,14 @@ import { ScrollTrigger } from 'gsap/all';
 import React, { useRef } from 'react';
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 import { MY_EXPERIENCE, SOCIAL_LINKS, GENERAL_INFO } from '@/lib/data';
+import { isMotionEnabled } from '@/lib/motion';
 
 export default function Experiences() {
     const containerRef = useRef<HTMLDivElement>(null);
 
     useGSAP(
         () => {
+            if (!isMotionEnabled()) return;
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
@@ -32,6 +34,7 @@ export default function Experiences() {
 
     useGSAP(
         () => {
+            if (!isMotionEnabled()) return;
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,

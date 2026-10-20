@@ -5,12 +5,14 @@ import { ScrollTrigger } from 'gsap/all';
 import React from 'react';
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 import ExperienceDuration from '@/components/ExperienceDuration';
+import { isMotionEnabled } from '@/lib/motion';
 
 export default function AboutMe() {
     const container = React.useRef<HTMLDivElement>(null);
 
     useGSAP(
         () => {
+            if (!isMotionEnabled()) return;
             const tl = gsap.timeline({
                 scrollTrigger: {
                     id: 'about-me-in',
@@ -32,6 +34,7 @@ export default function AboutMe() {
 
     useGSAP(
         () => {
+            if (!isMotionEnabled()) return;
             const tl = gsap.timeline({
                 scrollTrigger: {
                     id: 'about-me-out',

@@ -2,6 +2,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { useRef } from 'react';
+import { isMotionEnabled } from '@/lib/motion';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -11,6 +12,7 @@ const ArrowAnimation = () => {
     const arrow2Ref = useRef<SVGPathElement>(null);
 
     useGSAP(() => {
+        if (!isMotionEnabled()) return;
         gsap.set('#banner-arrow-svg', { fill: 'transparent', autoAlpha: 0 });
         gsap.set('.svg-arrow-1', {
             strokeDasharray: arrow1Ref.current?.getTotalLength(),

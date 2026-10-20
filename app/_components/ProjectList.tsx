@@ -10,6 +10,7 @@ import React, { useRef, useState, MouseEvent } from 'react';
 import Project from './Project';
 import Link from 'next/link';
 import LiveProjectLink from '@/components/LiveProjectLink';
+import { isMotionEnabled } from '@/lib/motion';
 const featuredSlugs = [
     'coach',
     'girlion',
@@ -35,6 +36,10 @@ const ProjectList = () => {
     // also update image position
     useGSAP(
         (context, contextSafe) => {
+            if (!isMotionEnabled()) {
+                setSelectedProject(null);
+                return;
+            }
             // show image on hover
             if (window.innerWidth < 768) {
                 setSelectedProject(null);
@@ -87,6 +92,7 @@ const ProjectList = () => {
 
     useGSAP(
         () => {
+            if (!isMotionEnabled()) return;
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
@@ -188,6 +194,11 @@ const ProjectList = () => {
                                     <h3 className="text-2xl font-anton transition-colors group-hover/more:text-primary">
                                         {p.title}
                                     </h3>
+                                    {p.company && (
+                                        <p className="mt-2 text-xs text-muted-foreground">
+                                            Company project · {p.company}
+                                        </p>
+                                    )}
                                     <ul
                                         aria-label="Tech stack"
                                         className="mt-3 flex flex-wrap gap-2 text-xs text-muted-foreground"

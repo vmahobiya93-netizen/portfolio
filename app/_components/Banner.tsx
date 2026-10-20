@@ -9,6 +9,7 @@ import { ScrollTrigger } from 'gsap/all';
 import ArrowAnimation from '@/components/ArrowAnimation';
 import ExperienceDuration from '@/components/ExperienceDuration';
 import styles from './Banner.module.css';
+import { isMotionEnabled } from '@/lib/motion';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -17,6 +18,7 @@ export default function Banner() {
 
     useGSAP(
         () => {
+            if (!isMotionEnabled()) return;
             const timeline = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,

@@ -9,6 +9,7 @@ import { ScrollTrigger } from 'gsap/all';
 import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
 import { useRef } from 'react';
 import LiveProjectLink from '@/components/LiveProjectLink';
+import { isMotionEnabled } from '@/lib/motion';
 
 interface Props {
     project: IProject;
@@ -21,6 +22,7 @@ const ProjectDetails = ({ project }: Props) => {
 
     useGSAP(
         () => {
+            if (!isMotionEnabled()) return;
             if (!containerRef.current) return;
 
             gsap.set('.fade-in-later', {
@@ -43,6 +45,7 @@ const ProjectDetails = ({ project }: Props) => {
     // blur info div and make it smaller on scroll
     useGSAP(
         () => {
+            if (!isMotionEnabled()) return;
             if (window.innerWidth < 992) return;
 
             gsap.to('#info', {
@@ -66,6 +69,7 @@ const ProjectDetails = ({ project }: Props) => {
     // parallax effect on images
     useGSAP(
         () => {
+            if (!isMotionEnabled()) return;
             gsap.utils
                 .toArray<HTMLDivElement>('#images > div')
                 .forEach((imageDiv, i) => {
@@ -184,7 +188,7 @@ const ProjectDetails = ({ project }: Props) => {
                             key={image}
                             className="group relative w-full aspect-[750/400] bg-background-light"
                             style={{
-                                backgroundImage: `url(${image})`,
+                                backgroundImage: `url(${image.replace('/images/', '/previews/')})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center 50%',
                                 backgroundRepeat: 'no-repeat',

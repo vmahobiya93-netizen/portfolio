@@ -2,11 +2,13 @@
 
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import { isMotionEnabled } from '@/lib/motion';
 
 gsap.registerPlugin(useGSAP);
 
 export default function Template({ children }: { children: React.ReactNode }) {
     useGSAP(() => {
+        if (!isMotionEnabled()) return;
         const tl = gsap.timeline();
 
         tl.to('.page-transition--inner', {

@@ -4,6 +4,8 @@ Personal portfolio site for Vaibhav Mahobiya, a Full Stack Developer specializin
 
 ## Features
 
+For the complete profile, skills, project records, site behavior, and maintenance guide, see [Portfolio Documentation](./PORTFOLIO_DOCUMENTATION.md).
+
 - Animated hero, about, skills, experience, and project sections
 - Individual project detail pages with tech stack, description, and screenshots
 - AI portfolio assistant — an Ollama Cloud-powered chat widget that answers visitor questions using live data from the site (see below)

@@ -2,6 +2,7 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { useRef } from 'react';
+import { isMotionEnabled } from '@/lib/motion';
 
 gsap.registerPlugin(useGSAP);
 
@@ -9,6 +10,7 @@ const CustomCursor = () => {
     const svgRef = useRef<SVGSVGElement>(null);
 
     useGSAP((context, contextSafe) => {
+        if (!isMotionEnabled()) return;
         if (window.innerWidth < 768) return;
 
         const handleMouseMove = contextSafe?.((e: MouseEvent) => {

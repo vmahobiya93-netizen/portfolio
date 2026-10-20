@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { ComponentProps } from 'react';
+import { isMotionEnabled } from '@/lib/motion';
 
 interface Props extends ComponentProps<typeof Link> {
     back?: boolean;
@@ -24,6 +25,15 @@ const TransitionLink = ({
 
     const handleLinkClick = contextSafe(
         async (e: React.MouseEvent<HTMLAnchorElement>) => {
+            if (!isMotionEnabled()) {
+                if (back) {
+                    e.preventDefault();
+                    router.back();
+                } else {
+                    onClick?.(e);
+                }
+                return;
+            }
             e.preventDefault();
 
             gsap.set('.page-transition', { yPercent: 100 });

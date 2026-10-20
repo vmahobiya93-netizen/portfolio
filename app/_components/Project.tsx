@@ -6,6 +6,7 @@ import gsap from 'gsap';
 import Image from 'next/image';
 import { useRef } from 'react';
 import LiveProjectLink from '@/components/LiveProjectLink';
+import { isMotionEnabled } from '@/lib/motion';
 
 interface Props {
     index: number;
@@ -41,6 +42,7 @@ const Project = ({ index, project, selectedProject, onMouseEnter }: Props) => {
 
     const handleMouseEnter = contextSafe?.(() => {
         onMouseEnter(project.slug);
+        if (!isMotionEnabled()) return;
 
         const arrowLine = externalLinkSVGRef.current?.querySelector(
             '#arrow-line',
@@ -171,6 +173,11 @@ const Project = ({ index, project, selectedProject, onMouseEnter }: Props) => {
                                     </div>
                                 ))}
                         </div>
+                        {project.company && (
+                            <p className="mt-2 text-xs text-muted-foreground">
+                                Company project · {project.company}
+                            </p>
+                        )}
                     </div>
                 </div>
             </TransitionLink>

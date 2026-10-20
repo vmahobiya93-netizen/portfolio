@@ -2,6 +2,7 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { useRef } from 'react';
+import { isMotionEnabled } from '@/lib/motion';
 
 gsap.registerPlugin(useGSAP);
 
@@ -9,6 +10,7 @@ const ParticleBackground = () => {
     const particlesRef = useRef<HTMLDivElement[]>([]);
 
     useGSAP(() => {
+        if (!isMotionEnabled()) return;
         particlesRef.current.forEach((particle) => {
             gsap.set(particle, {
                 width: Math.random() * 3 + 1,
@@ -30,8 +32,8 @@ const ParticleBackground = () => {
     }, []);
 
     return (
-        <div className="fixed inset-0 z-0 pointer-events-none">
-            {[...Array(100)].map((_, i) => (
+        <div className="motion-decoration fixed inset-0 z-0 pointer-events-none">
+            {[...Array(40)].map((_, i) => (
                 <div
                     key={i}
                     ref={(el) => {

@@ -2,6 +2,7 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import React, { useRef } from 'react';
+import { isMotionEnabled } from '@/lib/motion';
 
 gsap.registerPlugin(useGSAP);
 
@@ -10,6 +11,7 @@ const Preloader = () => {
 
     useGSAP(
         () => {
+            if (!isMotionEnabled()) return;
             const tl = gsap.timeline({
                 defaults: {
                     ease: 'power1.inOut',
@@ -41,7 +43,7 @@ const Preloader = () => {
     );
 
     return (
-        <div className="fixed inset-0 z-[6] flex" ref={preloaderRef}>
+        <div className="site-preloader fixed inset-0 z-[6] flex" ref={preloaderRef}>
             <div className="preloader-item h-full w-[10%] bg-black"></div>
             <div className="preloader-item h-full w-[10%] bg-black"></div>
             <div className="preloader-item h-full w-[10%] bg-black"></div>

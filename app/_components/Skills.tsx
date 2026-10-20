@@ -6,6 +6,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Image from 'next/image';
 import React, { useRef } from 'react';
+import { isMotionEnabled } from '@/lib/motion';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -14,6 +15,7 @@ const Skills = () => {
 
     useGSAP(
         () => {
+            if (!isMotionEnabled()) return;
             const slideUpEl =
                 containerRef.current?.querySelectorAll('.slide-up');
 
@@ -40,6 +42,7 @@ const Skills = () => {
 
     useGSAP(
         () => {
+            if (!isMotionEnabled()) return;
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
